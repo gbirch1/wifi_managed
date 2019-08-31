@@ -1,0 +1,19 @@
+#!/bin/bash
+
+echo "Switching wlp3s0 to Managed mode"
+
+sudo service network-manager restart
+
+sudo ip link set wlp3s0 down
+
+sudo macchanger -r wlp3s0
+
+sudo iw dev wlp3s0 set type managed
+
+sudo ip link set wlp3s0 up 
+
+echo "wlp3s0 Online, Cecking Status"
+
+sudo iw dev 
+
+echo "Wifi Online"
